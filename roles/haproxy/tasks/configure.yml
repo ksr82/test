@@ -3,6 +3,11 @@
     msg: "{{ item }}"
   loop: "{{ query('inventory_hostnames', 'haproxy_backends') }}"
 
+- name: Get all backends
+  debug:
+    msg: "{{ item }}"
+  loop: "{{ query('inventory_ips', 'haproxy_backends') }}"
+
 - name: Set HAProxy config
   template:
     src: haproxy.cfg.j2
