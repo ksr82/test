@@ -1,5 +1,7 @@
-- name: Setup nginx
+- name: Install nginx
   ansible.builtin.include_tasks:
-    file:
-      - install.yml
-      - configure.yml
+    file: install.yml
+
+- name: Configure nginx
+  ansible.builtin.include_tasks:
+    file: configure.yml
