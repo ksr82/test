@@ -1,2 +1,7 @@
-- import_playbook: install.yml
-- import_playbook: configure.yml
+- name: Install haproxy
+  ansible.builtin.include_tasks:
+    file: install.yml
+
+- name: Configure haproxy
+  ansible.builtin.include_tasks:
+    file: configure.yml

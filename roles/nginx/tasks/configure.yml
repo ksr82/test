@@ -1,14 +1,14 @@
 - name: Set Nginx config
   template:
-    src: templates/nginx.cfg.j2
+    src: nginx.cfg.j2
     dest: /etc/nginx/nginx.cfg
 
 - name: Set Nginx Enabled site
   template:
-    src: templates/enabled-site.j2
+    src: enabled-site.j2
     dest: /etc/nginx/sites/enabled/hello_world_website
 
 - name: Set Nginx html site
   template:
-    src: templates/hello_world_website.html.j2
+    src: hello_world_website.html.j2
     dest: /var/www/testsite/index.html
