@@ -4,5 +4,6 @@ frontend  test-frontend
         default_backend test-backend
 backend test-backend
         balance roundrobin
+        mode http
         server web-01 {{ backendip1 }}:{{ backend_port }} check
         server web-02 {{ backendip2 }}:{{ backend_port }} check
