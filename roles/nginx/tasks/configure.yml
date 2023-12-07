@@ -8,6 +8,12 @@
     src: enabled-site.j2
     dest: /etc/nginx/sites-enabled/hello_world_website
 
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /var/www/testsite/
+    state: directory
+    mode: '0755'
+
 - name: Set Nginx html site
   template:
     src: hello_world_website.html.j2
