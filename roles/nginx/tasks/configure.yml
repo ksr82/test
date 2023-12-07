@@ -18,3 +18,8 @@
   template:
     src: hello_world_website.html.j2
     dest: /var/www/testsite/index.html
+
+- name: Restart service nginx, in all cases
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
