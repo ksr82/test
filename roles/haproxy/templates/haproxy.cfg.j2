@@ -1,0 +1,8 @@
+frontend  test-frontend
+        bind *:80
+        mode http
+        default_backend test-backend
+backend test-backend
+        balance roundrobin
+        server web-01 {{ backendip1 }}:80 check
+        server web-02 {{ backendip2 }}:80 check

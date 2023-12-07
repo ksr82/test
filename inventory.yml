@@ -1,0 +1,12 @@
+all:
+  children:
+    haproxy_hosts:
+        hosts:
+          ksr-ceph-mon1:
+            ansible_host: 10.92.1.63
+    haproxy_backends:
+        hosts:
+          ksr-ceph-mon4:
+            ansible_host: 10.92.1.228
+          ksr-ceph-mon5:
+            ansible_host: 10.92.1.70

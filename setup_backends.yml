@@ -1,0 +1,5 @@
+- name: setup haproxy backends
+  hosts: haproxy_backends
+  become: true
+  roles:
+    - nginx
