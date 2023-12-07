@@ -1,4 +1,4 @@
 - name: Setup nginx
-  ansible.builtin.import_playbook:
+  ansible.builtin.include_tasks
     - install.yml
     - configure.yml
