@@ -6,7 +6,7 @@
 - name: Set Nginx Enabled site
   template:
     src: enabled-site.j2
-    dest: /etc/nginx/sites/enabled/hello_world_website
+    dest: /etc/nginx/sites-enabled/hello_world_website
 
 - name: Set Nginx html site
   template:
