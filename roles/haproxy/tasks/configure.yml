@@ -1,20 +1,3 @@
-- name: Get all backends
-  debug:
-    msg: "{{ item }}"
-  loop: "{{ query('inventory_hostnames', 'haproxy_backends') }}"
-
-- name: Show all the hosts in the inventory
-  ansible.builtin.debug:
-    msg: "{{ item }}"
-  loop: "{{ groups['haproxy_backends'] }}"
-
-- name: Show all the hosts in the inventory
-  ansible.builtin.debug:
-    msg: "{{hostvars[{{ item }}]['ansible_facts']['hostname']}}"
-  loop: "{{ groups['haproxy_backends'] }}"
-
-  
-
 - name: Set HAProxy config
   template:
     src: haproxy.cfg.j2
