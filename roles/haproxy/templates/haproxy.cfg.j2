@@ -1,5 +1,5 @@
 frontend  test-frontend
-        bind *:80
+        bind *:{{ frontend_port }}
         mode http
         default_backend test-backend
 backend test-backend
