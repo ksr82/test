@@ -1,5 +1,5 @@
 - name: setup haproxy
-  hosts: haproxy_hosts
+  hosts: all
   become: true
   roles:
-    - haproxy
+    - {role: haproxy, when: "'haproxy_hosts' in group_names"}
